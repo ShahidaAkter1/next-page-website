@@ -10,12 +10,15 @@ import Home from './components/Home/Home';
 import About from './components/About/About';
 import Books from './components/Books/Books';
 import BookDetails from './components/BookDetails/BookDetails';
+import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children:[
       {
         path: '/',
@@ -36,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: 'about',
         element:<About></About>
+      },
+      {
+        path: 'loader',
+        element:<LoadingSpinner></LoadingSpinner>
       },
     ]
   },
